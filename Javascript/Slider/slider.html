@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .sliderimage img {
+        width: 100%;
+    }
+    .slider{
+        filter: grayscale(100%);
+    }
+    .slider:hover{
+        filter: grayscale(0);
+    }
+</style>
+
+<body>
+
+    <div class="sliderimage">
+        <img src="./Image/pexels-baskin-creative-studios-1766838.jpg" alt="" class="slider">
+        <img src="./Image/pexels-harun-tan-3980364.jpg" alt="" class="slider">
+        <img src="./Image/pexels-joshua-woroniecki-2607956.jpg" alt="" class="slider">
+        <img src="./Image/pexels-life-of-pix-7919.jpg" alt="" class="slider">
+        <img src="./Image/pexels-nicolas-poupart-2360569.jpg" alt="" class="slider">
+        <img src="./Image/pexels-pixabay-531880.jpg" alt="" class="slider">
+        <img src="./Image/pexels-quang-nguyen-vinh-2131614.jpg" alt="" class="slider">
+        <img src="./Image/pexels-tobias-bjørkli-2104152.jpg" alt="" class="slider">
+    </div>
+
+    <script>
+        var sliderdata = document.getElementsByClassName("slider");
+        counter = 0
+        console.log(sliderdata);
+        function slider() {
+            for (let index = 0; index < sliderdata.length; index++) {
+                console.log(sliderdata[index]);
+                sliderdata[index].style.display = "none"
+            }
+            if (counter >= sliderdata.length) {
+                counter = 0;
+            }
+            console.log(counter);
+            sliderdata[counter].style.display = "block"
+            counter++;
+
+            setTimeout(slider, 3000);
+        }
+        slider();
+
+
+    </script>
+
+</body>
+
+</html>

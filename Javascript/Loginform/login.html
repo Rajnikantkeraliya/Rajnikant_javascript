@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" onblur="validation()" placeholder="Email or Phone" id="exampleInputusername">
+        <span id="usererror"></span>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="exampleInputPassword1">
+        <span id="passworderror"></span>
+        <button type="submit" id="btn-primary">Submit</button>
+        <div class="social">
+          <div class="go"><i class="fab fa-google"></i>  Google</div>
+          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+
+
+    <script>
+        let username=document.getElementById("exampleInputusername")
+        let password=document.getElementById("exampleInputPassword1")
+        let submit=document.getElementById("btn-primary")
+        function validation(){
+            if(username.value==""){
+                document.getElementById("usererror").innerHTML="Enter the User Name"
+                event.preventDefault()
+            }
+            else{
+                document.getElementById("usererror").innerHTML=""
+            }
+            if(password.value==""){
+                document.getElementById("passworderror").innerHTML="Enter the Password"
+                event.preventDefault()
+            }else if(password.value.length  < 6){
+                document.getElementById("passworderror").innerHTML="Max 6 to 14 digit Password"
+                event.preventDefault()
+            }
+            else{
+                document.getElementById("passworderror").innerHTML=""
+            }
+        }
+      </script>
+</body>
+</html>

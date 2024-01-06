@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select, input {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        #timeSlot, #time {
+            display: none;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="bookingForm">
+        <label for="bookingType">Choice of Booking:</label>
+        <select id="bookingType" onchange="showOptions()">
+            <option value="fullday">Full Day Booking</option>
+            <option value="halfday">Half Day Booking</option>
+            <option value="hourly">Hourly Booking</option>
+        </select>
+
+        <label for="userName">User Name:</label>
+        <input type="text" id="userName" required>
+
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="noOfPersons">Number of Persons:</label>
+        <input type="number" id="noOfPersons" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <div id="timeSlot">
+            <label for="slot">Slot:</label>
+            <select id="slot">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+        </div>
+
+        <div id="time">
+            <label for="timePicker">Time:</label>
+            <input type="time" id="timePicker" required>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function showOptions() {
+            var bookingType = document.getElementById("bookingType").value;
+            var form = document.getElementById("bookingForm");
+            var timeSlot = document.getElementById("timeSlot");
+            var time = document.getElementById("time");
+
+            // Remove existing timeSlot and time elements
+            if (timeSlot) form.removeChild(timeSlot);
+            if (time) form.removeChild(time);
+
+            if (bookingType === "fullday") {
+                // For Full Day Booking, only date option is available.
+            } else if (bookingType === "halfday") {
+                // For Half Day Booking, show Slot options.
+                var slotDiv = createSlotDiv();
+                form.appendChild(slotDiv);
+            } else if (bookingType === "hourly") {
+                // For Hourly Booking, show Date and Time options.
+                var dateInput = createInputElement("date", "date");
+                var timePickerInput = createInputElement("time", "timePicker");
+
+                form.appendChild(dateInput);
+                form.appendChild(timePickerInput);
+            }
+        }
+
+        function createInputElement(type, id) {
+            var input = document.createElement("input");
+            input.type = type;
+            input.id = id;
+            input.required = true;
+
+            var label = document.createElement("label");
+            label.for = id;
+            label.textContent = id.charAt(0).toUpperCase() + id.slice(1) + ":";
+
+            var container = document.createElement("div");
+            container.appendChild(label);
+            container.appendChild(input);
+
+            return container;
+        }
+
+        function createSlotDiv() {
+            var slotSelect = createInputElement("select", "slot");
+            var option1 = document.createElement("option");
+            option1.value = "breakfast";
+            option1.textContent = "Breakfast";
+
+            var option2 = document.createElement("option");
+            option2.value = "lunch";
+            option2.textContent = "Lunch";
+
+            var option3 = document.createElement("option");
+            option3.value = "dinner";
+            option3.textContent = "Dinner";
+
+            slotSelect.querySelector("select").appendChild(option1);
+            slotSelect.querySelector("select").appendChild(option2);
+            slotSelect.querySelector("select").appendChild(option3);
+
+            return slotSelect;
+        }
+
+        function submitForm() {
+            // Add your form submission logic here
+            alert("Form Submitted!");
+        }
+    </script>
+</body>
+</html>
