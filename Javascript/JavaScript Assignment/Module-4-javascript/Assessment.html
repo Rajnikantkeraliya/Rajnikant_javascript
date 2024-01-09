@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        #slot-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<form id="bookingForm">
+    <label for="bookingType">Choice of Booking:</label>
+    <select id="bookingType" onchange="updateForm()">
+        <option value="fullDay">Full day booking</option>
+        <option value="halfDay">Half day booking</option>
+        <option value="hourly">Hourly booking</option>
+    </select>
+
+    <label for="username">User Name:</label>
+    <input type="text" id="username" required>
+
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="tel" id="mobileNumber" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="numberOfPersons">Number of Persons:</label>
+    <input type="number" id="numberOfPersons" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" required>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time">
+
+    <div id="slot-container">
+        <label for="slot">Slot:</label>
+        <select id="slot">
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+        </select>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function updateForm() {
+        var bookingType = document.getElementById("bookingType").value;
+        var slotContainer = document.getElementById("slot-container");
+
+        if (bookingType === "fullDay") {
+            // Full day booking, only show date
+            document.getElementById("time").value = "";
+            slotContainer.style.display = "none";
+        } else if (bookingType === "halfDay") {
+            // Half day booking, show date and slot
+            slotContainer.style.display = "block";
+        } else if (bookingType === "hourly") {
+            // Hourly booking, show date and time
+            document.getElementById("slot").value = "";
+            slotContainer.style.display = "none";
+        }
+    }
+
+    document.getElementById("bookingForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        // Process the form data here
+        alert("Booking submitted successfully!");
+    });
+</script>
+
+</body>
+</html>

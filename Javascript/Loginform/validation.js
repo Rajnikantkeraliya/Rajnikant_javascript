@@ -20,3 +20,21 @@ data.forEach(input => {
         }
     };
 });
+    document.getElementById("Email").addEventListener("keyup", function(){
+    let RegEx = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9_\.\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+    let emailid = document.getElementById("Email");
+    let alertmsg = document.querySelector(".alert");
+
+    if(!RegEx.test(emailid.value)){
+    if(!alertmsg){
+        let msg=document.createElement("div");
+        msg.className="alert";
+        msg.textContent ="Email Not Valid";
+        emailid.parentNode.appendChild(msg);
+    }}
+    else{
+        if(alertmsg){
+            alertmsg.parentNode.removeChild(alertmsg);
+        }
+    }
+    })
