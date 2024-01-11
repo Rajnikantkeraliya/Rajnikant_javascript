@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+
+<script>
+
+        document.addEventListener("DOMContentLoaded", function(){
+            function createElement (type,attributes,text){
+                let element = document.createElement(type);
+            for(let key in attributes)
+            {
+            element.setAttribute(key, attributes [key]);
+            }
+            if(text){
+                element.textContent=text;
+            }
+            return element;
+        }
+        let formContainer=document.body;
+        let bookingchoicelable= createElement("label",{},"Choice of booking:")
+        let bookingChoiceSelect=createElement("selet",{id:"bookingchoice"});
+        let bookingOptions=["full day booking", "Half Day Booking", "Hourly Booking"];
+        for(const option of bookingOptions){
+            const optionElement=createElement("option",{ value:option},option);
+            bookingChoiceSelect.appendChild(optionElement);
+        }
+        let userNameLabel = createElement("label" , {} , "user Name:");
+        const userNameInput = createElement("input", { type : "text", id: "username"});
+
+        let mobileNumberLabel = createElement("lable" , {}, "Mobile number:");
+        let mobileNumberInput = createElement("input",{ type : "tel", id: "mobilenumber"});
+
+        let emailLabel =createElement ("lable", {} , "Email :");
+        let emailInput = createElement ("input" , {type: "email", id: "email"});
+
+        let numberOfPersonsLabel = createElement ("label",{}, "No Of Persons:");
+        let numberOfPersonsInput = createElement ("input",{ type: "number", id: "numberOfPersons"});
+
+        let dateLabel = createElement("label" , {}, "Date:");
+        let dateInput = createElement("input" , { type: "date" , id: "date"});
+
+        let timeLabel = createElement ("label",{},"time:");
+        let timeInput = createElement("input",{type: "time", id: "time"});
+
+        })
+
+</script>
+
+</head>
+<body>
