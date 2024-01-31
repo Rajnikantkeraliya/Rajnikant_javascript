@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section class="sec-one">
+        <div class="row">
+            <div class="col-20">
+                <h2>Module (JQuery Basic, Effects & Advanced) – 5</h2>
+                <hr>
+                <a href="#" class="a" id="top">What is jQuery?</a>
+                <hr>
+                <a href="#" class="b">Add Class and Remove Class,JQuery Animation</a>
+                <hr>
+                <a href="#" class="c">slider with animation</a>
+                <hr>
+            </div>
+            <div class="col-80">
+                <div class="tital">
+                    <h3>Module (JQuery Basic, Effects & Advanced) – 5</h3>
+                </div>
+                <!--------------------------------------  QUESTION-ONE -------------------------------------------->
+
+                <main class="que1 margin dis">
+                    <div class="que">
+                        <h2>&#49; .What is jQuery?</h2>
+                    </div>
+                    <div class="ans">
+                        <p>&#10518; jQuery is a fast, small, and feature-rich JavaScript library.</p>
+                        <p> &#10518;It simplifies various tasks such as HTML document traversal and manipulation, event
+                            handling, animation, and AJAX (Asynchronous JavaScript and XML) interactions. </p>
+                        <p>&#10518;It simplifies various tasks such as HTML document traversal and manipulation, event
+                            handling, animation, and AJAX (Asynchronous JavaScript and XML) interactions. </p>
+                    </div>
+                </main>
+
+
+
+                <!--------------------------------  QUESTION-TWO-------------------------------------->
+
+                <main class="que2 margin dis">
+                    <div class="que">
+                        <h2>&#50; .How to Apply CSS Using JQuery, How to Add Class and Remove Class in Jquery ,
+                            JQuery Animation?</h2>
+                    </div>
+                    <div class="ans">
+                        <h3>
+                            &#10518; To apply CSS using jQuery</h3>
+                        <p>// Applying CSS using jQuery</p>
+                        <p>$(document).ready(function(){</p>
+                        <p>// Selecting elements by class and applying CSS</p>
+                        <p> $(".myElement").css("color", "red");</p>
+                        <p>// Selecting elements by ID and applying CSS</p>
+                        <p>$("#myElement").css({</p>
+                        <p> "font-size": "20px",</p>
+                        <p>"background-color": "blue"});</p>
+                        <p>});</p>
+
+                        <h2> &#10518;Adding and removing classes using jQuery</h2>
+
+                        <p>$(document).ready(function(){</p>
+                        <p> // Adding a class</p>
+                        <p> $(".myElement").addClass("highlight");</p>
+                        <p> // Removing a class</p>
+                        <p> $("#myElement").removeClass("inactive");</p>
+                        <p>});</p>
+
+                        <h2> &#10518;jQuery animation</h2>
+
+                        <p>$(document).ready(function(){</p>
+                        <p> // Animating an element's width</p>
+                        <p> $("#myElement").animate({ width: "500px"}, 1000); // 1000 milliseconds (1 second) duration
+                            // Sliding an element down</p>
+                        <p> $(".slideDownButton").click(function(){ $(".slideDownElement").slideDown(); });</p>
+                        <p> // Fading an element out</p>
+                        <p> $(".fadeOutButton").click(function(){ $(".fadeOutElement").fadeOut(); });</p>
+                        <p>});</p>
+                    </div>
+                </main>
+                <!--------------------------------  QUESTION-THREE ---------------------------------->
+                <main class="que3 margin dis">
+                    <div class="que">
+                        <h2>&#51; .How to create slider with animation?</h2>
+                    </div>
+                   <img src="../code.png" alt="">
+                </main>
+
+    </section>
+
+    <script src="./first.js"></script>
+</body>
+
+</html>

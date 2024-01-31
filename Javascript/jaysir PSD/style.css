@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.row {
+  display: flex;
+
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.col-50 {
+  width: 50%;
+
+}
+
+.header {
+  background-color: black;
+  color: white;
+  padding: 1em;
+  margin: 0.2em;
+}
+
+.container {
+  width: 1350px;
+  margin: 0 auto;
+}
+
+ul li {
+  display: inline-block;
+}
+
+a {
+  color: white;
+  margin: 0.3em;
+}
+
+#space {
+  margin: 0.5em;
+}
+
+.color {
+  color: rgb(156, 154, 154);
+}
+
+.navbar {
+  align-items: center;
+  padding: 1em;
+}
+
+.align {
+  align-items: center;
+}
+
+nav {
+  &.primary-navigation {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+
+    ul li {
+      list-style: none;
+      margin: 0 auto;
+      /*  border-left: 2px solid #3ca0e7; */
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      font-family: arvo;
+    }
+
+    li a {
+      color: black;
+    }
+
+    li a:hover {
+      color: #3ca0e7;
+    }
+
+    li:hover {
+      cursor: pointer;
+    }
+
+    ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      /* padding-left: 0;
+      left: 0; */
+      background: white;
+      z-index: 10;
+
+    }
+
+    ul li:hover>ul,
+    ul li ul:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      min-width: 250px;
+      text-align: left;
+      margin: 1rem;
+      padding-top: 1.2rem;
+      border-radius: 0.5em;
+      box-shadow: 3px 3px 15px gray;
+      transition: all 1s ease-in-out;
+    }
+
+    ul li ul li {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 1.2rem;
+      border-style: none;
+    }
+
+    ul li ul li a:hover {
+      padding-left: 1.1rem;
+      border-left: 2px solid #3ca0e7;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+a {
+
+  text-decoration: none;
+
+  &:hover {
+    color: #3CA0E7;
+  }
+
+}
+
+ul li ul li a {
+  transition: all 0.5s ease;
+}
+
+.tgmenu__search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 0.001em solid gray;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+svg {
+  color: #685de1;
+}
+
+.form-select {
+  width: 150px;
+  padding: 5px;
+  border: 0px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #685de1;
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  animation: fadeIn 0.5s ease;
+
+  &:hover {
+    background-color: orange;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.glow-on-hover {
+  margin-left: 1em;
+  padding: 1em 2em;
+  border: none;
+  outline: none;
+  color: #050303;
+  background-color: orange;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  border-radius: 40px;
+
+  &:hover {
+    background-color: #685de1;
+    color: white;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.cart i {
+  border: 0.01em solid black;
+  padding: 0.8em;
+  margin: 0.5em;
+  border:none;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #685de1;
+    color: white;
+  }
+}
+
+.cart {
+  margin-left: 1em;
+}
+
+
+/* <!-------------------------------------- section-one ------------------------------------------> */
+.sec-one {
+  background-color: #F0ECFA;
+  padding-top: 5em;
+  background-image: url(./Asset/banner_shape01.svg);
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+
+.text h2 {
+  font-size: 3.5em;
+}
+
+.learning {
+  background: #FFC224;
+  border: 1px solid;
+  clip-path: polygon(47% 2%, 99% 8%, 98% 94%, 51% 99%, 6% 96%, 4% 9%);
+  /*   border-radius: 40px; */
+  padding: 0.1em 0.5em;
+}
+
+.font {
+  font-size: 3em;
+}
+
+.paragraph {
+  font-size: 1.3em;
+  padding: 1em 0;
+  width: 70%;
+  color: gray;
+}
+
+.button button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 50px;
+  background-color: #5751E1;
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+  box-shadow: 6px 6px #050071;
+  transition: 0.7s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: orange;
+    box-shadow: none;
+    transition: 0.7s ease-in-out;
+  }
+}
+
+.box {
+  width: 15%;
+  position: absolute;
+  z-index: 1;
+  border: none;
+  background-color: white;
+  padding: 0.1em;
+  border-radius: 0.5em;
+  box-shadow: 8px 8px 3px #a5a4a6;
+
+}
+
+.image img {
+  margin: 0.2em 0.5em;
+  width: 60%
+}
+.mainimage{
+    margin-left: 6em;
+    padding-left: 3em;
+    position: relative;
+    z-index: 2;
+}
+.design1{
+  position: absolute;
+  /* bottom: -40px; */
+  top: 136px;
+  overflow: hidden;
+  right: 60px;
+  z-index: 2;
+}
+.design2{
+  position: absolute;
+  /* bottom: 430px; */
+  top: 50px;
+  overflow: hidden;
+  right: 29.7%;
+  z-index: 1;
+}
+.degign{
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  bottom: 52px;
+  overflow: hidden;
+}
+.design3{
+  position: absolute;
+  /* bottom: 430px; */
+  /* top: px; */
+  overflow: hidden;
+  right: 5%;
+  z-index: 1;
+  .rotateme {
+    -webkit-animation-name: rotateme;
+    animation-name: rotateme;
+    -webkit-animation-duration: 180s;
+    animation-duration: 180s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+.design3 .shape.bg-dots {
+  max-width: 495px;
+  right: 30px;
+  bottom: -33px;
+  z-index: -2;
+}
+}

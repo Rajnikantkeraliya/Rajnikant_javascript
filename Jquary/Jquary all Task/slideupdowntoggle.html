@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div h2{
+        color: red;
+        width: 100%;
+        height: 200px;
+        background-color: coral;
+    }
+</style>
+<body>
+
+    <div>
+       <h2>Hello How Are You.......</h2>
+    </div>
+    <button id="up">Slide Up</button>
+    <button id="down">Slide Down</button>
+    <button id="toggle">Toggle</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </script>
+    <script>
+        $("#up").click(function(){
+            $("div").slideUp(1000);
+        })
+        $("#down").click(function(){
+            $("div").slideDown(1000);
+        })
+        $("#toggle").click(function(){
+            $("div").toggle(1000);
+        })
+    </script>
+</body>
+</html>

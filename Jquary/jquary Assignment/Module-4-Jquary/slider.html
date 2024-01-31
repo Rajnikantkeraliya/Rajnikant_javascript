@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the slider container */
+        .slider-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* Style for the slides */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Style for each slide */
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Navigation buttons */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: black;
+            border: none;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider-container">
+        <div class="slides">
+            <div class="slide"><img src="./0I5A1841-01.jpeg" alt="Image 1"></div>
+            <div class="slide"><img src="./DSC_0601-01.jpeg" alt="Image 2"></div>
+            <div class="slide"><img src="./DSC_4593-01.jpeg" alt="Image 3"></div>
+            <div class="slide"><img src="./DSC_9468-01.jpeg" alt="Image 3"></div>
+            <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Navigation buttons -->
+        <!-- <button class="prev" onclick="prevSlide()">❮</button>
+        <button class="next" onclick="nextSlide()">❯</button> -->
+    </div>
+
+    <script>
+        let sliderdata = document.getElementsByClassName("slide");
+        counter = 0;
+        function slider() {
+            for (let index = 0; index <= sliderdata.length; index++) {
+                console.log(sliderdata[index]);
+                sliderdata[index].style.display = "none"
+            }
+            if (counter >= sliderdata.length) {
+                counter = 0
+            }
+            sliderdata[counter].style.display = "block"
+            counter++;
+            setTimeout(slider, 3000);
+        }
+        slider();
+    </script>
+
+</body>
+
+</html>
