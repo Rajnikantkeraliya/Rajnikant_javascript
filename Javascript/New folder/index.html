@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class  human{
+            name=""
+            weight=0
+            height=0
+            bmi=0
+            ph=""
+/*
+
+            walk=()=>{
+                document.write("i am waking")
+            }
+
+            calculatemybmi=()=>{
+                this.bmi=this.weight/(this.height*this.height)
+                console.log(this.bmi)
+            } */
+            constructor (p1,p2,p3){
+                this.name=p1
+                this.weight=p2
+                this.height=p3
+                this.bmi=p2/(p3*p3)
+            }
+        }
+
+        let raj =new human("raj",72,5.8)
+
+
+
+
+
+
+
+
+            console.log (`Details of Raj ${raj.name} ${raj.height} ${raj.weight} ${raj.bmi}`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <Script>
+        // Array of human objects
+        const humans = [
+            { name: 'Raj', age: 25 },
+            { name: 'Pritesh', age: 17 },
+            { name: 'NishantBhai', age: 30 },
+            { name: 'Het', age: 16 },
+            { name: 'Mayank', age: 22 },
+        ];
+
+        // Use the filter method to find humans with age >= 18 and return their names
+        const adults = humans.filter(human => human.age >= 18);
+
+        // Extract names from the filtered array
+        const adultNames = adults.map(adult => adult.name);
+
+        console.log(adult);
+0
+    </Script>
+
+</body>
+
+</html>
